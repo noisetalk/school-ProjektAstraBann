@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+﻿using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 lookInput;
     public float jumpStrength = 5f;
-    
+
     [Header("Jump Parameters")]
     [SerializeField] public float jumpForce = 10.0f;
     [SerializeField] private float gravity = 9.81f;
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [Header("Look Sensitivity")]
     [SerializeField] private Vector2 mouseSensitivity;
     [SerializeField] private Vector2 upDownRange;
-    
+
     private CharacterController characterController;
     private Camera mainCamera;
     private InputHandler inputHandler;
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         InputHandler.OnJumpPerformed -= OnJump;
         InputHandler.OnLookPerformed -= OnLook;
     }
-    
+
     public void OnMove(Vector2 moveInp)
     {
         moveInput = moveInp;
@@ -56,8 +56,8 @@ public class PlayerController : MonoBehaviour
     {
         lookInput = lookInp;
     }
-    
-    
+
+
     void HandleMove()
     {
         Vector3 inputDirection = new Vector3(moveInput.x, 0f, moveInput.y);
@@ -73,16 +73,16 @@ public class PlayerController : MonoBehaviour
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
         */
     }
-    
+
     void HandleRotation()
     {
         float mouseX = lookInput.x * mouseSensitivity.x;
         transform.Rotate(Vector3.up * mouseX);
-        
+
         verticalRotation -= lookInput.y * mouseSensitivity.y;
         verticalRotation = Mathf.Clamp(verticalRotation, upDownRange.y, upDownRange.x);
         mainCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
-        
+
         /*
         mouseX = lookInput.x * mouseSensitivity.x;
         transform.Rotate(0, mouseX, 0);
@@ -107,20 +107,33 @@ public class PlayerController : MonoBehaviour
         {
             currentMovement.y = -0.5f;
             xJumpCurrent = 0;
-        }else
+        }
+        else
         {
             currentMovement.y -= gravity * Time.deltaTime;
         }
     }
-    
-    
+
+
     private void Update()
     {
         HandleMove();
         HandleRotation();
         HandleAss();
-        
+
         // HandleJump();
         // characterController.Move(currentMovement * Time.deltaTime);
+
+        // Sicherstellen, dass der Charakter auf der Plattform bleibt
+        if (characterController.isGrounded)
+        {
+            // Finde die Plattform, auf der sich der Charakter befindet
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, -Vector3.up, out hit, 1f))
+            {
+                // Bewege den Charakter mit der Plattform
+                transform.position = Vector3.MoveTowards(transform.position, hit.transform.position, moveSpeed * Time.fixedDeltaTime);
+            }
+        }
     }
 }
