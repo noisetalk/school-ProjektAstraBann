@@ -18,6 +18,9 @@ public class ObjectMoving : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log(collision.gameObject.transform);
+            Debug.Log(transform);
+            Debug.Log("Player entered the platform.");
             collision.gameObject.transform.SetParent(transform);
         }
     }
@@ -25,6 +28,7 @@ public class ObjectMoving : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Player exited the platform.");
             collision.gameObject.transform.SetParent(null);
         }
     }
@@ -48,7 +52,7 @@ public class ObjectMoving : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (positions == null || positions.Count == 0)
         {

@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 6252440314006428227}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,15 +213,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d818ea7b9071c49b0ea048c654a38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 10
+  moveSpeed: 10
   jumpStrength: 5
   jumpForce: 10
   gravity: 9.81
   xJumpCurrent: 0
-  xJumpLimit: 1
+  xJumpLimit: 2
   mouseSensitivity: {x: 0.8, y: 0.4}
   upDownRange: {x: 80, y: -80}
-  mouseX: 0
 --- !u!1 &7584243731236732537
 GameObject:
   m_ObjectHideFlags: 0

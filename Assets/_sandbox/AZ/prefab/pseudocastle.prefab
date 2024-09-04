@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 864755517708303925}
   m_Layer: 0
-  m_Name: castle
+  m_Name: pseudocastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
