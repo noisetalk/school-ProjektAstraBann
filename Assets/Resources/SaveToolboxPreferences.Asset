@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0c4990b45b422383c6ff18cf254c9e, type: 3}
+  m_Name: SaveToolboxPreferences
+  m_EditorClassIdentifier: 
+  <DefaultSaveSettings>k__BackingField:
+    <SaveFileName>k__BackingField: SaveGameData
+    <RelativeFolderPath>k__BackingField: 
+    <SaveFileFormat>k__BackingField: 0
+    <JsonPrettyPrint>k__BackingField: 1
+    <SerializationSettings>k__BackingField:
+      <FieldSerializationSettings>k__BackingField:
+        <ValidTarget>k__BackingField: 1
+        <TargetAllPrivate>k__BackingField: 0
+        <TargetAllPublic>k__BackingField: 1
+        <TargetSerializeFieldAttribute>k__BackingField: 1
+        <TargetStbSerializeAttribute>k__BackingField: 1
+      <PropertySerializationSettings>k__BackingField:
+        <ValidTarget>k__BackingField: 1
+        <TargetAllPrivate>k__BackingField: 0
+        <TargetAllPublic>k__BackingField: 0
+        <TargetSerializeFieldAttribute>k__BackingField: 1
+        <TargetStbSerializeAttribute>k__BackingField: 1
+    <StbEncryptionSettings>k__BackingField:
+      <EncryptionType>k__BackingField: 0
+      <EncryptionKeyword>k__BackingField: S4v3T00lb0x
+      <EncryptionInitializationVector>k__BackingField: xhWFy/bpsTyz4BBCzTmYNg==
+    <CompressionType>k__BackingField: 0
+    <RebuildLoadableObjects>k__BackingField: 1
+    <PhysicsSyncTransformsOnLoad>k__BackingField: 1
+    <SaveScene>k__BackingField: 0
+    <StbSceneSavingType>k__BackingField: 1
+    <FreezeTimeScaleOnAsynchronousSaveLoad>k__BackingField: 1
+  asynchronousSaving: 0
+  <LowestAcceptableLoadingFrameRate>k__BackingField: 30
+  <LoggingEnabled>k__BackingField: 1

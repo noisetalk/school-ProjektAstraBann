@@ -1,0 +1,32 @@
+{
+    "name": "SaveToolbox",
+    "rootNamespace": "",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "",
+            "define": "STB_HAS_INPUT_SYSTEM"
+        },
+        {
+            "name": "Unity",
+            "expression": "2022.2",
+            "define": "STB_ABOVE_2022_2"
+        },
+        {
+            "name": "Unity",
+            "expression": "2021.3",
+            "define": "STB_ABOVE_2021_3"
+        }
+    ],
+    "noEngineReferences": false
+}
