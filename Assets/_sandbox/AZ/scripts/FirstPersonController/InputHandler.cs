@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-	// Centralized script for handling all input actions and broadcasting them via events.
-
 public class InputHandler : MonoBehaviour
 {
     public delegate void MoveAction(Vector2 moveInput);
@@ -13,8 +11,8 @@ public class InputHandler : MonoBehaviour
 
     public delegate void JumpAction();
     public static event JumpAction OnJumpPerformed;
-    public bool JumpPressed { get; private set; }
-    private bool jumpPressedLastFrame;
+    // public bool JumpPressed { get; private set; }
+    // private bool jumpPressedLastFrame;
     
     public delegate void UseAction();
     public static event UseAction OnUsePerformed;
